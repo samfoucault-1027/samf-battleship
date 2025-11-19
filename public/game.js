@@ -234,7 +234,6 @@ const elements = {
     enemyShips: document.getElementById('enemy-ships'),
     playerShips: document.getElementById('player-ships'),
     muteToggle: document.getElementById('mute-toggle'),
-    highContrastToggle: document.getElementById('high-contrast-toggle'),
     darkModeToggle: document.getElementById('dark-mode-toggle'),
     modal: document.getElementById('game-over-modal'),
     modalIcon: document.getElementById('modal-icon'),
@@ -298,10 +297,6 @@ function setupEventListeners() {
         toggleOrientation();
     });
     elements.muteToggle.addEventListener('click', toggleSound);
-    elements.highContrastToggle.addEventListener('click', () => {
-        soundEffects.click();
-        toggleHighContrast();
-    });
     elements.darkModeToggle.addEventListener('click', () => {
         soundEffects.click();
         toggleDarkMode();
@@ -1123,10 +1118,6 @@ function addShipImage(boardType, ship, startRow, startCol) {
     
     board.appendChild(shipImg);
     ship.imageElement = shipImg;
-}
-
-function toggleHighContrast() {
-    document.body.classList.toggle('high-contrast');
 }
 
 function toggleDarkMode() {
