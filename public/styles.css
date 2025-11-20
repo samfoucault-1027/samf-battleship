@@ -19,25 +19,97 @@
     --accent-green: #00ff00;
     --glass-bg: rgba(0, 255, 0, 0.05);
     --glass-border: rgba(0, 255, 0, 0.3);
+    
+    /* Big surfaces (currently referenced but were missing) */
+    --deep-ocean: #0a0a0a;
+    --darker-ocean: #000000;
+    --foam-white: #e8ffe8;
+    --ocean-surface: rgba(0, 255, 0, 0.08);
+    
+    /* Accents used elsewhere but were missing */
+    --gold-accent: #d4af37;
+    --success-green: #18c964;
 }
 
 body.dark-mode {
-    --bg-black: #0d0d0d;
-    --bg-dark: #1a1a1a;
-    --bg-panel: #242424;
-    --grid-green: #00ff88;
-    --grid-green-dim: #00cc66;
-    --grid-green-dark: #008844;
-    --text-green: #00ff88;
-    --text-green-bright: #66ffaa;
-    --ship-gray: #505050;
-    --ship-dark: #353535;
-    --hit-red: #ff4444;
-    --hit-glow: #ff7777;
-    --miss-white: #999999;
-    --accent-green: #00ff88;
-    --glass-bg: rgba(0, 255, 136, 0.12);
-    --glass-border: rgba(0, 255, 136, 0.5);
+    /* Page and panels: deep navy instead of gray/black */
+    --deep-ocean: #071423;
+    --darker-ocean: #020915;
+    --bg-black: #050b1a;
+    --bg-dark: #0b1324;
+    --bg-panel: #0f1d36;
+    
+    /* Text and neutrals: cool off-white for strong contrast */
+    --foam-white: #e2f1ff;
+    --miss-white: #a5b9d6;
+    
+    /* Sonar cyan accents (replacing green theme) */
+    --grid-green: #2ef2ff;
+    --grid-green-dim: #18b8d9;
+    --grid-green-dark: #0c647a;
+    --text-green: #b7f4ff;
+    --text-green-bright: #e6fbff;
+    --accent-green: #2ef2ff;
+    
+    /* Ships and structure */
+    --ship-gray: #1b2a3f;
+    --ship-dark: #121c2e;
+    
+    /* Feedback colors */
+    --hit-red: #ff6b6b;
+    --hit-glow: #ff8c8c;
+    
+    /* Glass & waves: visibly blue-tinted */
+    --glass-bg: rgba(23, 49, 88, 0.35);
+    --glass-border: rgba(46, 242, 255, 0.35);
+    --ocean-surface: rgba(46, 242, 255, 0.12);
+    
+    /* Accents */
+    --gold-accent: #f4d06f;
+    --success-green: #2bd48f;
+}
+
+/* Dark mode overrides for hardcoded colors */
+body.dark-mode .btn-primary {
+    background: linear-gradient(135deg, #2ef2ff 0%, #18b8d9 50%, #0c647a 100%);
+    border: 3px solid #2ef2ff;
+    text-shadow: 0 0 10px rgba(46, 242, 255, 0.5);
+    box-shadow: 
+        0 0 20px rgba(46, 242, 255, 0.3),
+        0 0 40px rgba(46, 242, 255, 0.2),
+        inset 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .btn-primary:hover {
+    box-shadow: 
+        0 0 30px rgba(46, 242, 255, 0.6),
+        0 0 60px rgba(46, 242, 255, 0.5),
+        inset 0 0 30px rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, #2ef2ff 0%, #2ef2ff 50%, #18b8d9 100%);
+}
+
+body.dark-mode .cell.ship.placed {
+    border: 3px solid #2ef2ff;
+    box-shadow: 
+        0 0 10px rgba(46, 242, 255, 0.6),
+        inset 0 0 10px rgba(46, 242, 255, 0.2);
+}
+
+body.dark-mode .modal-title {
+    color: #2ef2ff;
+}
+
+body.dark-mode .radar {
+    border: 3px solid #2ef2ff;
+}
+
+body.dark-mode .radar-blip {
+    background: #2ef2ff;
+    box-shadow: 0 0 8px #2ef2ff;
+}
+
+body.dark-mode .radar-blip:nth-child(odd) {
+    box-shadow: 0 0 15px #2ef2ff;
 }
 
 @media (prefers-reduced-motion: reduce) {
