@@ -22,11 +22,26 @@
 }
 
 body.high-contrast {
-    --ocean-deep: #000000;
-    --ocean-dark: #1a1a1a;
-    --ocean-mid: #333333;
-    --glass-bg: rgba(255, 255, 255, 0.3);
-    --glass-border: rgba(255, 255, 255, 0.5);
+    /* Page background gradient (center lighter, edges slightly darker) */
+    --deep-ocean: #f2f4f7;
+    --darker-ocean: #d9dee5;
+    
+    /* Wave overlay shade */
+    --ocean-surface: #d0d5db;
+    
+    /* Panel backgrounds */
+    --bg-panel: #f5f7fa;
+    
+    /* Glass panels (translucent light) */
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    
+    /* Compatibility with older variable names */
+    --ocean-deep: #f2f4f7;
+    --ocean-dark: #d9dee5;
+    --ocean-mid: #e7eaf0;
+    
+    /* Guarantee readable text across the app */
+    color: #111;
 }
 
 @media (prefers-reduced-motion: reduce) {
