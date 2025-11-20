@@ -22,245 +22,21 @@
 }
 
 body.high-contrast {
-    /* Dark theme with blue/purple color palette */
-    --bg-black: #000000;
-    --bg-dark: #050510;
-    --bg-panel: #0d0d1a;
-    --grid-green: #4a90e2;
-    --grid-green-dim: #3a7bc8;
-    --grid-green-dark: #2a5f9e;
-    --text-green: #7fb3d5;
-    --text-green-bright: #9fc9e8;
-    --ship-gray: #2a2a3e;
-    --ship-dark: #1a1a2e;
-    --hit-red: #e74c3c;
-    --hit-glow: #ff6b6b;
-    --miss-white: #4a4a5e;
-    --accent-green: #5a9fd4;
-    --glass-bg: rgba(74, 144, 226, 0.08);
-    --glass-border: rgba(74, 144, 226, 0.25);
+    /* Page background gradient */
+    --deep-ocean: #000000;
+    --darker-ocean: #0d0d0d;
+    
+    /* Wave overlay shade */
+    --ocean-surface: #0a0a0a;
+    
+    /* Panels and glass */
+    --bg-panel: #111111;
+    --glass-bg: rgba(0, 0, 0, 0.35);
+    
+    /* Compatibility with older variable names */
     --ocean-deep: #000000;
-    --ocean-dark: #0a0a15;
-    --ocean-mid: #1a1a2e;
-    --gold-accent: #9b87f5;
-    --foam-white: #c8d6e5;
-    --success-green: #6c5ce7;
-}
-
-/* Dark mode header overrides */
-body.high-contrast .game-header {
-    background: var(--bg-panel);
-    box-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
-    border: 2px solid var(--grid-green);
-}
-
-body.high-contrast .tactical-badge {
-    background: var(--grid-green);
-    color: var(--bg-black);
-    box-shadow: 0 0 10px rgba(74, 144, 226, 0.6);
-}
-
-body.high-contrast .game-header h1 {
-    color: var(--text-green);
-    text-shadow: 
-        0 0 15px rgba(74, 144, 226, 0.8),
-        0 0 30px rgba(74, 144, 226, 0.4),
-        0 0 45px rgba(74, 144, 226, 0.2);
-}
-
-/* Dark mode title glow animation override */
-body.high-contrast .game-header h1 {
-    animation: title-glow-dark 3s ease-in-out infinite;
-}
-
-@keyframes title-glow-dark {
-    0%, 100% {
-        text-shadow: 
-            0 0 15px rgba(74, 144, 226, 0.8),
-            0 0 30px rgba(74, 144, 226, 0.4),
-            0 0 45px rgba(74, 144, 226, 0.2);
-    }
-    50% {
-        text-shadow: 
-            0 0 25px rgba(74, 144, 226, 1),
-            0 0 50px rgba(74, 144, 226, 0.6),
-            0 0 75px rgba(74, 144, 226, 0.4);
-    }
-}
-
-/* Dark mode button overrides */
-body.high-contrast .icon-button {
-    background: var(--bg-panel);
-    border: 2px solid var(--grid-green);
-    color: var(--text-green);
-}
-
-body.high-contrast .icon-button:hover {
-    background: var(--grid-green);
-    color: var(--bg-black);
-    box-shadow: 0 0 15px rgba(74, 144, 226, 0.6);
-}
-
-body.high-contrast .icon-button.active {
-    background: var(--grid-green);
-    color: var(--bg-black);
-    box-shadow: 0 0 20px rgba(74, 144, 226, 0.8);
-}
-
-/* Dark mode board overrides */
-body.high-contrast .board {
-    border: 2px solid var(--grid-green);
-    box-shadow: 
-        0 0 20px rgba(74, 144, 226, 0.5), 
-        inset 0 0 30px rgba(0, 0, 0, 0.9),
-        inset 0 0 60px rgba(74, 144, 226, 0.1);
-}
-
-body.high-contrast .board::before {
-    background-image:
-        linear-gradient(to right, var(--grid-green) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--grid-green) 1px, transparent 1px);
-}
-
-body.high-contrast .cell {
-    background: 
-        radial-gradient(ellipse at 30% 30%, rgba(74, 90, 144, 0.2) 0%, transparent 50%),
-        radial-gradient(ellipse at 70% 70%, rgba(58, 70, 120, 0.15) 0%, transparent 50%),
-        var(--bg-dark);
-    border: 1px solid rgba(74, 144, 226, 0.15);
-}
-
-body.high-contrast .cell.ship.placed {
-    background: var(--bg-dark);
-    border: 3px solid #4a90e2;
-    box-shadow: 
-        0 0 10px rgba(74, 144, 226, 0.6),
-        inset 0 0 10px rgba(74, 144, 226, 0.2);
-}
-
-body.high-contrast .cell.ship.placed::before {
-    border: 2px solid rgba(74, 144, 226, 0.4);
-}
-
-body.high-contrast .cell.ship.placed::after {
-    border: 2px solid rgba(74, 144, 226, 0.6);
-    box-shadow: 0 0 5px rgba(74, 144, 226, 0.8);
-}
-
-/* Dark mode radar sweep override */
-body.high-contrast .radar-sweep-overlay::before {
-    background: linear-gradient(to top, rgba(74, 144, 226, 0.6), transparent);
-    box-shadow: 0 0 10px rgba(74, 144, 226, 0.8);
-}
-
-body.high-contrast .radar-sweep-overlay::after {
-    background: rgba(74, 144, 226, 0.8);
-    box-shadow: 0 0 8px rgba(74, 144, 226, 1);
-}
-
-/* Dark mode primary button override */
-body.high-contrast .btn-primary {
-    background: linear-gradient(135deg, #4a90e2 0%, #3a7bc8 50%, #2a5f9e 100%);
-    color: #fff;
-    text-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
-    border: 3px solid #4a90e2;
-    box-shadow: 
-        0 0 20px rgba(74, 144, 226, 0.6),
-        0 0 40px rgba(74, 144, 226, 0.3),
-        inset 0 0 20px rgba(255, 255, 255, 0.2);
-    animation: button-pulse-dark 2s ease-in-out infinite;
-}
-
-body.high-contrast .btn-primary:hover:not(:disabled) {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 
-        0 0 30px rgba(74, 144, 226, 0.8),
-        0 0 60px rgba(74, 144, 226, 0.5),
-        inset 0 0 30px rgba(255, 255, 255, 0.3);
-    background: linear-gradient(135deg, #5a9fd4 0%, #4a90e2 50%, #3a7bc8 100%);
-}
-
-@keyframes button-pulse-dark {
-    0%, 100% {
-        box-shadow: 
-            0 0 20px rgba(74, 144, 226, 0.6),
-            0 0 40px rgba(74, 144, 226, 0.3),
-            inset 0 0 20px rgba(255, 255, 255, 0.2);
-    }
-    50% {
-        box-shadow: 
-            0 0 30px rgba(74, 144, 226, 0.8),
-            0 0 60px rgba(74, 144, 226, 0.5),
-            inset 0 0 30px rgba(255, 255, 255, 0.3);
-    }
-}
-
-/* Dark mode scanline effect override */
-body.high-contrast::before {
-    background: repeating-linear-gradient(
-        0deg,
-        rgba(74, 144, 226, 0.02) 0px,
-        transparent 1px,
-        transparent 2px,
-        rgba(74, 144, 226, 0.02) 3px
-    );
-}
-
-/* Dark mode board container overrides */
-body.high-contrast .board-container {
-    box-shadow: 
-        0 0 30px rgba(74, 144, 226, 0.2),
-        inset 0 0 50px rgba(74, 144, 226, 0.05);
-}
-
-body.high-contrast .board-container h3 {
-    color: var(--gold-accent);
-    text-shadow: 
-        0 0 10px rgba(155, 135, 245, 0.5),
-        2px 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-/* Dark mode difficulty button overrides */
-body.high-contrast .difficulty-btn {
-    background: rgba(74, 144, 226, 0.1);
-    border: 2px solid var(--glass-border);
-}
-
-body.high-contrast .difficulty-btn:hover {
-    background: rgba(74, 144, 226, 0.2);
-}
-
-body.high-contrast .difficulty-btn.active {
-    background: var(--gold-accent);
-    border-color: var(--gold-accent);
-}
-
-/* Dark mode stat panel overrides */
-body.high-contrast .stat-item {
-    background: rgba(74, 144, 226, 0.08);
-    border: 1px solid var(--glass-border);
-}
-
-body.high-contrast .stat-value {
-    color: var(--gold-accent);
-}
-
-/* Dark mode message display override */
-body.high-contrast .message-display {
-    background: rgba(74, 144, 226, 0.08);
-}
-
-/* Dark mode targeting hover effect override */
-body.high-contrast #computer-board .cell:not(.hit):not(.miss):hover {
-    background: 
-        linear-gradient(90deg, transparent 48%, rgba(155, 135, 245, 0.6) 48%, rgba(155, 135, 245, 0.6) 52%, transparent 52%),
-        linear-gradient(0deg, transparent 48%, rgba(155, 135, 245, 0.6) 48%, rgba(155, 135, 245, 0.6) 52%, transparent 52%),
-        radial-gradient(circle, rgba(155, 135, 245, 0.2) 0%, transparent 70%),
-        var(--bg-dark);
-    border: 2px solid #9b87f5;
-    box-shadow: 
-        0 0 20px rgba(155, 135, 245, 0.6),
-        inset 0 0 20px rgba(155, 135, 245, 0.3);
+    --ocean-dark: #0d0d0d;
+    --ocean-mid: #111111;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -287,7 +63,6 @@ body {
     position: relative;
     font-family: 'Consolas', 'Courier New', 'Monaco', 'Lucida Console', monospace;
     letter-spacing: 0.5px;
-    transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Scanline effect for retro gaming feel */

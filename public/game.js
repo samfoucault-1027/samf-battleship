@@ -1117,16 +1117,6 @@ function addShipImage(boardType, ship, startRow, startCol) {
 
 function toggleHighContrast() {
     document.body.classList.toggle('high-contrast');
-    const button = elements.highContrastToggle;
-    const buttonText = button.querySelector('.btn-text');
-    
-    if (document.body.classList.contains('high-contrast')) {
-        buttonText.textContent = 'DARK MODE';
-        button.classList.add('active');
-    } else {
-        buttonText.textContent = 'DISPLAY';
-        button.classList.remove('active');
-    }
 }
 
 window.addEventListener('DOMContentLoaded', initGame);
