@@ -235,6 +235,7 @@ const elements = {
     playerShips: document.getElementById('player-ships'),
     muteToggle: document.getElementById('mute-toggle'),
     highContrastToggle: document.getElementById('high-contrast-toggle'),
+    darkModeToggle: document.getElementById('dark-mode-toggle'),
     modal: document.getElementById('game-over-modal'),
     modalIcon: document.getElementById('modal-icon'),
     modalTitle: document.getElementById('modal-title'),
@@ -254,6 +255,11 @@ function initGame() {
     setupEventListeners();
     placeComputerShips();
     updateUI();
+    
+    const darkMode = localStorage.getItem('darkMode');
+    if (darkMode === 'enabled') {
+        document.body.classList.add('dark-mode');
+    }
 }
 
 function createEmptyBoard() {
@@ -295,6 +301,10 @@ function setupEventListeners() {
     elements.highContrastToggle.addEventListener('click', () => {
         soundEffects.click();
         toggleHighContrast();
+    });
+    elements.darkModeToggle.addEventListener('click', () => {
+        soundEffects.click();
+        toggleDarkMode();
     });
     elements.modalClose.addEventListener('click', () => {
         soundEffects.click();
@@ -1117,6 +1127,12 @@ function addShipImage(boardType, ship, startRow, startCol) {
 
 function toggleHighContrast() {
     document.body.classList.toggle('high-contrast');
+}
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
 }
 
 window.addEventListener('DOMContentLoaded', initGame);

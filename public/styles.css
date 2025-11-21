@@ -44,6 +44,25 @@ body.high-contrast {
     color: #111;
 }
 
+body.dark-mode {
+    --bg-black: #1a1a1a;
+    --bg-dark: #2a2a2a;
+    --bg-panel: #3a3a3a;
+    --grid-green: #00dd00;
+    --grid-green-dim: #009900;
+    --grid-green-dark: #006600;
+    --text-green: #00ff00;
+    --text-green-bright: #66ff66;
+    --ship-gray: #606060;
+    --ship-dark: #4a4a4a;
+    --hit-red: #ff3333;
+    --hit-glow: #ff6666;
+    --miss-white: #888888;
+    --accent-green: #00ff00;
+    --glass-bg: rgba(0, 255, 0, 0.08);
+    --glass-border: rgba(0, 255, 0, 0.4);
+}
+
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
